@@ -151,7 +151,7 @@ type (
 		XAxis           bool             `json:"x-axis,omitempty"`
 		YAxis           bool             `json:"y-axis,omitempty"`
 		YFormats        []string         `json:"y_formats,omitempty"`
-		Xaxis           Axis             `json:"xaxis"` // was added in Grafana 4.x?
+		Xaxis           xaxis            `json:"xaxis"` // was added in Grafana 4.x?
 		Yaxes           []Axis           `json:"yaxes"` // was added in Grafana 4.x?
 	}
 	Threshold struct {
@@ -392,12 +392,18 @@ type Target struct {
 	Target string `json:"target,omitempty"`
 
 	// For CloudWatch
-	Namespace  string            `json:"namespace,omitempty"`
-	MetricName string            `json:"metricName,omitempty"`
-	Statistics []string          `json:"statistics,omitempty"`
-	Dimensions map[string]string `json:"dimensions,omitempty"`
-	Period     string            `json:"period,omitempty"`
-	Region     string            `json:"region,omitempty"`
+	Namespace  string   `json:"namespace,omitempty"`
+	MetricName string   `json:"metricName,omitempty"`
+	Statistics []string `json:"statistics,omitempty"`
+	// Dimensions interface{} `json:"dimensions,omitempty"`
+	Dimensions struct {
+		AvailabilityZone string `json:"AvailabilityZone,omitempty"`
+		SubnetID         string `json:"SubnetID,omitempty"`
+		VPCID            string `json:"VPCID,omitempty"`
+		SubnetName       string `json:"SubnetName,omitempty"`
+	} `json:"dimensions,omitempty"`
+	Period string `json:"period,omitempty"`
+	Region string `json:"region,omitempty"`
 }
 
 type MapType struct {
