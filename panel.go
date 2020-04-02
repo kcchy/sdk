@@ -292,18 +292,20 @@ type (
 		Desc bool `json:"desc"`
 	}
 	Legend struct {
-		AlignAsTable bool  `json:"alignAsTable"`
-		Avg          bool  `json:"avg"`
-		Current      bool  `json:"current"`
-		HideEmpty    bool  `json:"hideEmpty"`
-		HideZero     bool  `json:"hideZero"`
-		Max          bool  `json:"max"`
-		Min          bool  `json:"min"`
-		RightSide    bool  `json:"rightSide"`
-		Show         bool  `json:"show"`
-		SideWidth    *uint `json:"sideWidth,omitempty"`
-		Total        bool  `json:"total"`
-		Values       bool  `json:"values"`
+		AlignAsTable bool   `json:"alignAsTable"`
+		Avg          bool   `json:"avg"`
+		Current      bool   `json:"current"`
+		HideEmpty    bool   `json:"hideEmpty"`
+		HideZero     bool   `json:"hideZero"`
+		Max          bool   `json:"max"`
+		Min          bool   `json:"min"`
+		RightSide    bool   `json:"rightSide"`
+		Show         bool   `json:"show"`
+		SideWidth    *uint  `json:"sideWidth,omitempty"`
+		Total        bool   `json:"total"`
+		Values       bool   `json:"values"`
+		Sort         string `json:"sort"`
+		SortDesc     bool   `json:"sortDesc"`
 	}
 )
 
