@@ -124,6 +124,7 @@ type (
 		TagsField  string   `json:"tagsField"`
 		Tags       []string `json:"tags"`
 		Type       string   `json:"type"`
+		Hide       bool     `json:"hide"`
 	}
 )
 
